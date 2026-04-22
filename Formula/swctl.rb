@@ -1,12 +1,13 @@
 class Swctl < Formula
   desc "Manage Shopware 6 worktrees with Docker, OrbStack, and an ANSI TUI"
   homepage "https://github.com/nguyenytran/swctl"
-  url "https://github.com/nguyenytran/swctl/releases/download/v0.4.7/swctl-0.4.7.tar.gz"
-  sha256 "ce87706d8a71eb124c708094c7efafda6d5e004ab4ee01633f65eeeb5a29dbfe"
+  url "https://github.com/nguyenytran/swctl/releases/download/v0.5.0/swctl-0.5.0.tar.gz"
+  sha256 "50523443efec69a4bfd6e119271a18b48d46d41611d6b0efefe81b04de2b90a1"
   license "MIT"
 
   depends_on "docker"
   depends_on "git"
+  depends_on "jq" # used by `swctl mcp install` and the resolve skill's scripts
 
   def install
     libexec.install "swctl"
@@ -16,6 +17,7 @@ class Swctl < Formula
                      "docker-compose.swctl.orbstack.yml",
                      "workflows",
                      "app",
+                     "skills",
                      "README.md"
 
     # Also copy swctl into pkgshare so the Docker container can find it
@@ -44,6 +46,10 @@ class Swctl < Formula
 
       Start the web UI with:
         swctl ui
+
+      Optional: install bundled Claude Code skills + MCP server:
+        swctl skill install --user
+        swctl mcp install --user
 
       Requires Docker (or OrbStack) to be installed and running.
     EOS
