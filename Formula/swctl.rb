@@ -1,8 +1,8 @@
 class Swctl < Formula
   desc "Manage Shopware 6 worktrees with Docker, OrbStack, and an ANSI TUI"
   homepage "https://github.com/nguyenytran/swctl"
-  url "https://github.com/nguyenytran/swctl/releases/download/v0.6.13/swctl-0.6.13.tar.gz"
-  sha256 "cef6d7f85839461c8281573df00b9ec495a501c1f942b08bcf8e3bc9cceaf12e"
+  url "https://github.com/nguyenytran/swctl/releases/download/v0.6.15/swctl-0.6.15.tar.gz"
+  sha256 "5ff81bfc5538723db36df87e9f5e4916c5d56d0191f42f76c73d9e0ccc71b6f8"
   license "MIT"
 
   depends_on "docker"
